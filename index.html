@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card form component</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="flex h-screen w-screen absolute">
+    <div id="left-background" class="flex relative">
+      <img
+        src="assets/bg-main-desktop.png"
+        alt="dark purple background"
+        class="w-max"
+      />
+    </div>
+    <div id="card-front" class="static absolute top-60 left-40 left-0 h-1/4">
+      <img src="assets/bg-card-front.png" alt="front of card" />
+      <div
+        id="circle1"
+        class="border rounded-full absolute bg-white bottom-40 left-8 h-12 w-12"
+      ></div>
+      <div
+        id="circle2"
+        class="border rounded-full absolute bottom-44 left-24 h-6 w-6"
+      ></div>
+      <h2
+        class="text-white text-3xl absolute bottom-14 right-24 font-light"
+        id="numberPlaceholder"
+      >
+        0000 0000 0000 0000
+      </h2>
+      <h2
+        class="text-white text-m absolute bottom-2 right-4"
+        id="expirationPlaceholder"
+      >
+        00/00
+      </h2>
+      <h2
+        class="text-white text-m absolute bottom-2 left-8"
+        id="namePlaceholder"
+      >
+        JANE APPLESEED
+      </h2>
+    </div>
+    <div>
+      <img
+        src="assets/bg-card-back.png"
+        alt="back of card"
+        class="static absolute bottom-40 left-72 left-0 h-1/4"
+      />
+    </div>
+
+    <div id="container" class="flex justify-center items-center m-auto">
+      <div id="right-background" class="flex justify-center items-center">
+        <div id="card-fields" class="flex-col min-h-96 min-w-96">
+          <div id="cardholder" class="mb-10">
+            <p class="font-light mb-1 text-xs">CARDHOLDER NAME</p>
+            <input
+              value="e.g. Jane Appleseed"
+              class="text-gray-300 border border-gray-300 rounded-md w-80 h-9 pl-3"
+            />
+          </div>
+          <div id="cardNumber " class="mb-10">
+            <p class="font-light mb-1 text-xs">CARD NUMBER</p>
+            <input
+              value="e.g. 1234 5678 9123 0000"
+              class="text-gray-300 border border-gray-300 rounded-md w-80 h-9 pl-3"
+            />
+          </div>
+          <div id="bottom-row" class="flex m-0">
+            <div id="expDate" class="mb-10">
+              <p class="font-light mb-1 text-xs">EXP. DATE (MM/YY)</p>
+              <input
+                value="MM"
+                class="text-gray-300 border border-gray-300 rounded-md w-16 h-9 mr-2 pl-3"
+              />
+              <input
+                value="YY"
+                class="text-gray-300 border border-gray-300 rounded-md w-16 h-9 pl-3"
+              />
+            </div>
+            <div id="cvc" class="mb-10">
+              <p class="font-light mb-1 text-xs ml-10">CVC</p>
+              <input
+                value="e.g. 123"
+                class="text-gray-300 border border-gray-300 rounded-md w-36 ml-9 h-9 pl-3"
+              />
+            </div>
+          </div>
+          <button
+            id="confirm-btn"
+            class="bg-black text-white w-80 rounded-xl h-10 shadow-md text-sm"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
