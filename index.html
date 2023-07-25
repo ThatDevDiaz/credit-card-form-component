@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body class="flex h-screen w-screen absolute">
-    <!-- Left side of body/desktop -->
+    <!-- Left side of body/desktop 
+    
+    -->
     <div id="left-background" class="flex relative">
       <img
         src="assets/bg-main-desktop.png"
@@ -15,31 +17,33 @@
         class="w-max"
       />
     </div>
-    <!-- Card images -->
-    <div id="card-front" class="static absolute top-60 left-40 left-0 h-1/4">
+    <!-- Card images
+    
+    -->
+    <div id="card-front" class="absolute top-60 left-40 left-0 z-20">
       <img src="assets/bg-card-front.png" alt="front of card" />
       <div
         id="circle1"
-        class="border rounded-full absolute bg-white bottom-40 left-8 h-12 w-12"
+        class="border rounded-full relative bg-white bottom-52 left-8 h-12 w-12 object-scale-down"
       ></div>
       <div
         id="circle2"
-        class="border rounded-full absolute bottom-44 left-24 h-6 w-6"
+        class="border rounded-full relative bottom-64 left-24 h-6 w-6"
       ></div>
       <h2
-        class="text-white text-3xl absolute bottom-14 right-24 font-light"
+        class="text-white text-3xl relative bottom-44 left-10 font-light"
         id="numberPlaceholder"
       >
         0000 0000 0000 0000
       </h2>
       <h2
-        class="text-white text-m absolute bottom-2 right-4"
+        class="text-white text-m relative bottom-36 left-96"
         id="expirationPlaceholder"
       >
         00/00
       </h2>
       <h2
-        class="text-white text-m absolute bottom-2 left-8"
+        class="text-white text-m relative bottom-44 left-8"
         id="namePlaceholder"
       >
         JANE APPLESEED
@@ -52,18 +56,28 @@
         class="static absolute bottom-40 left-72 left-0 h-1/4"
       />
     </div>
-    <!-- Right side of body -->
+    <!-- Right side of body
+    
+    -->
     <div id="container" class="flex justify-center items-center m-auto">
       <div id="right-background" class="flex justify-center items-center">
-        <!-- Card form container  -->
-        <div id="card-fields" class="flex-col min-h-96 min-w-96">
-          <div id="cardholder" class="mb-10">
+        <!-- Card form container 
+        
+        -->
+        <div
+          id="card-fields"
+          class="flex-col min-h-96 min-w-96 z-30 bg-white rounded-lg"
+        >
+          <div id="cardholder" class="mb-8">
             <p class="font-light mb-1 text-xs">CARDHOLDER NAME</p>
             <input
               value="e.g. Jane Appleseed"
               class="text-gray-300 border border-gray-300 rounded-md w-80 h-9 pl-3"
               id="cardholderInput"
             />
+            <div id="invalidName" class="text-red-500 text-sm p-0 hidden">
+              Must be a valid name
+            </div>
           </div>
           <div id="cardNumber " class="mb-10">
             <p class="font-light mb-1 text-xs">CARD NUMBER</p>
@@ -72,20 +86,27 @@
               class="text-gray-300 border border-gray-300 rounded-md w-80 h-9 pl-3"
               id="cardNumberInput"
             />
+            <div id="invalidCard" class="text-red-500 text-sm p-0 hidden">
+              Must be a valid card number
+            </div>
           </div>
           <div id="bottom-row" class="flex m-0">
             <div id="expDate" class="mb-10">
-              <p class="font-light mb-1 text-xs">EXP. DATE (MM/YY)</p>
+              <p class="font-light mb-1 text-xs">EXP. DATE</p>
               <input
                 value="MM"
                 class="text-gray-300 border border-gray-300 rounded-md w-16 h-9 mr-2 pl-3"
                 id="expInputM"
               />
+
               <input
                 value="YYYY"
                 class="text-gray-300 border border-gray-300 rounded-md w-16 h-9 pl-3"
                 id="expInputY"
               />
+              <div id="invalidDate" class="text-red-500 text-sm p-0 hidden">
+                Enter a valid M/Y
+              </div>
             </div>
             <div id="cvc" class="mb-10">
               <p class="font-light mb-1 text-xs ml-10">CVC</p>
@@ -94,6 +115,9 @@
                 class="text-gray-300 border border-gray-300 rounded-md w-36 ml-9 h-9 pl-3"
                 id="cvcInput"
               />
+              <div id="invalidCvc" class="text-red-500 text-sm pl-10 hidden">
+                Enter a valid cvc
+              </div>
             </div>
           </div>
           <button
@@ -103,7 +127,9 @@
             Confirm
           </button>
         </div>
-        <!-- card form completed -->
+        <!-- card form completed 
+        
+        -->
         <div
           id="card-fields-completed"
           class="flex-col min-h-96 min-w-96 items-center justify-center hidden"
